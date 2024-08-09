@@ -56,6 +56,19 @@
     cursor: pointer; /* Make items look clickable */
 }
 
+#logo {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 120px; /* Adjust the size as needed */
+    z-index: 1000; /* Ensure it appears on top */
+    opacity: 0.9; /* Slight transparency, if desired */
+}
+
+#logo:hover {
+    opacity: 1; /* Fully opaque on hover */
+}
+
 
 /* Other existing styles remain the same */
 body {
