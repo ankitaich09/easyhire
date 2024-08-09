@@ -3,11 +3,23 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
 
     // Load profiles from the CSV file
-    fetch('/data/candidates.csv')
-        .then(response => response.text())
+    fetch('data/candidates.csv')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.text();
+        })
         .then(data => {
             profiles = parseCSV(data);
-            displayProfile(currentIndex);
+            if (profiles.length > 0) {
+                displayProfile(currentIndex);
+            } else {
+                console.error('No profiles found in the CSV.');
+            }
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
         });
 
     document.getElementById('accept').addEventListener('click', function() {
@@ -21,14 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayProfile(index) {
         if (index < profiles.length) {
             const profile = profiles[index];
-            document.getElementById('name').textContent = profile.name;
-            document.getElementById('experience').textContent = profile.experience;
-            document.getElementById('company').textContent = profile.company;
-            document.getElementById('job').textContent = profile.job;
-            document.getElementById('education').textContent = profile.education;
-            document.getElementById('skills').textContent = profile.skills;
-            document.getElementById('other-skills').textContent = profile.other_skills;
-            document.getElementById('referrals').textContent = profile.referrals;
+            document.getElementById('name').textContent = profile.name || 'N/A';
+            document.getElementById('experience').textContent = profile.experience || 'N/A';
+            document.getElementById('company').textContent = profile.company || 'N/A';
+            document.getElementById('job').textContent = profile.job || 'N/A';
+            document.getElementById('education').textContent = profile.education || 'N/A';
+            document.getElementById('skills').textContent = profile.skills || 'N/A';
+            document.getElementById('other-skills').textContent = profile.other_skills || 'N/A';
+            document.getElementById('referrals').textContent = profile.referrals || 'N/A';
         }
     }
 
