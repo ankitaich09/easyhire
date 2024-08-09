@@ -1,4 +1,4 @@
-experience,company,job,education,skills,other_skills,referrals
-5,Example Corp,Software Developer,B.Sc in Computer Science,"JavaScript, Python, SQL",Team Leadership,3
-7,Tech Inc.,Lead Developer,M.Sc in Information Technology,"Java, Angular, Node.js",Agile Methodologies,5
-3,Startup LLC,Junior Developer,B.A. in Software Engineering,"HTML, CSS, React",UI/UX Design,2
+name,experience,company,job,education,skills,other_skills,referrals
+John Doe,5,Example Corp,Software Developer,B.Sc in Computer Science,"JavaScript, Python, SQL",Team Leadership,3
+Jane Smith,7,Tech Inc.,Lead Developer,M.Sc in Information Technology,"Java, Angular, Node.js",Agile Methodologies,5
+Alice Johnson,3,Startup LLC,Junior Developer,B.A. in Software Engineering,"HTML, CSS, React",UI/UX Design,2
