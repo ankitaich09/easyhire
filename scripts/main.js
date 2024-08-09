@@ -33,14 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayProfile(index) {
         if (index < profiles.length) {
             const profile = profiles[index];
-            document.getElementById('name').textContent = profile.name || 'N/A';
-            document.getElementById('experience').textContent = profile.experience || 'N/A';
-            document.getElementById('company').textContent = profile.company || 'N/A';
-            document.getElementById('job').textContent = profile.job || 'N/A';
-            document.getElementById('education').textContent = profile.education || 'N/A';
-            document.getElementById('skills').textContent = profile.skills || 'N/A';
-            document.getElementById('other-skills').textContent = profile.other_skills || 'N/A';
-            document.getElementById('referrals').textContent = profile.referrals || 'N/A';
+            document.getElementById('name').textContent = profile.name || '';
+            document.getElementById('experience').textContent = profile.experience || '';
+            document.getElementById('company').textContent = profile.company || '';
+            document.getElementById('job').textContent = profile.job || '';
+            document.getElementById('education').textContent = profile.education || '';
+            document.getElementById('skills').textContent = profile.skills || '';
+            document.getElementById('other-skills').textContent = profile.other_skills || '';
+            document.getElementById('referrals').textContent = profile.referrals || '';
         }
     }
 
@@ -61,33 +61,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function parseCSV(data) {
-    const lines = data.split('\n');
-    const headers = lines[0].split(',');
+        const lines = data.split('\n');
+        const headers = lines[0].split(',');
 
-    return lines.slice(1).map(line => {
-        const values = [];
-        let inQuotes = false;
-        let value = '';
-
-        for (let i = 0; i < line.length; i++) {
-            const char = line[i];
-
-            if (char === '"') {
-                inQuotes = !inQuotes; // toggle the state of inQuotes
-            } else if (char === ',' && !inQuotes) {
-                values.push(value.trim());
-                value = '';
-            } else {
-                value += char;
-            }
-        }
-        values.push(value.trim());
-
-        let profile = {};
-        headers.forEach((header, i) => {
-            profile[header.trim()] = values[i] ? values[i].trim() : "N/A";
-        });
-        return profile;
-    });
-}
+        return lines.slice(1)
+            .map(line => {
+                if (!line.trim()) return null; // Ignore empty lines
+                const values = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+                if (values && values.length === headers.length) {
+                    let profile = {};
+                    headers.forEach((header, i) => {
+                        profile[header.trim()] = values[i] ? values[i].replace(/(^"|"$)/g, '').trim() : "N/A";
+                    });
+                    return profile;
+                }
+                return null;
+            })
+            .filter(profile => profile !== null); // Filter out any null profiles
+    }
 });
