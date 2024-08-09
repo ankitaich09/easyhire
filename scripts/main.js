@@ -24,14 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error fetching jobs:', error));
 
-    document.getElementById('accept').addEventListener('click', function() {
-        selectCandidate();
-    });
-
-    document.getElementById('reject').addEventListener('click', function() {
-        swipeLeft();
-    });
-
     document.getElementById('home-btn').addEventListener('click', function() {
         displayProfile(currentIndex);
     });
@@ -92,24 +84,72 @@ document.addEventListener('DOMContentLoaded', function() {
     function selectCandidate() {
         if (currentIndex < profiles.length) {
             const profile = profiles[currentIndex];
-            selectedCandidates.push(profile.name);
+            selectedCandidates.push(profile);
             updateSelectedCandidates();
-            swipeLeft();
+            profiles.splice(currentIndex, 1); // Remove the selected candidate from profiles list
+            if (currentIndex >= profiles.length) {
+                currentIndex = 0;
+            }
+            if (profiles.length > 0) {
+                displayProfile(currentIndex);
+            } else {
+                document.getElementById('profile-card').innerHTML = '<p>No more candidates to display.</p>';
+            }
         }
     }
 
     function updateSelectedCandidates() {
         const selectedList = document.getElementById('selected-candidates');
         selectedList.innerHTML = ''; // Clear the current list
-        selectedCandidates.forEach(candidate => {
+        selectedCandidates.forEach((candidate, index) => {
             const li = document.createElement('li');
-            li.textContent = candidate;
+            li.textContent = `${index + 1}. ${candidate.name}`;
+            li.addEventListener('click', function() {
+                displaySelectedProfile(candidate);
+            });
             selectedList.appendChild(li);
         });
     }
 
+    function displaySelectedProfile(candidate) {
+        document.getElementById('profile-card').innerHTML = `
+            <h2 class="name">${candidate.name || ''}</h2>
+            <div class="profile-details">
+                <h3>Years of Experience</h3>
+                <ul>
+                    <li>${candidate.experience || ''}</li>
+                </ul>
+                <h3>Previous Company</h3>
+                <ul>
+                    <li>${candidate.company || ''}</li>
+                </ul>
+                <h3>Job Title</h3>
+                <ul>
+                    <li>${candidate.job || ''}</li>
+                </ul>
+                <h3>Education</h3>
+                <ul>
+                    <li>${candidate.education || ''}</li>
+                </ul>
+                <h3>Skills</h3>
+                <ul>
+                    <li>${candidate.skills || ''}</li>
+                </ul>
+                <h3>Other Relevant Skills</h3>
+                <ul>
+                    <li>${candidate.other_skills || ''}</li>
+                </ul>
+                <h3>#Jobs Referred To</h3>
+                <ul>
+                    <li>${candidate.referrals || ''}</li>
+                </ul>
+            </div>
+        `;
+    }
+
     function populateJobsDropdown(jobs) {
         const dropdown = document.getElementById('jobs-dropdown');
+        dropdown.innerHTML = ''; // Clear any existing jobs
         jobs.forEach(job => {
             const a = document.createElement('a');
             a.textContent = job.name;
@@ -150,18 +190,36 @@ document.addEventListener('DOMContentLoaded', function() {
             output.textContent = this.value;
         };
     }
-        function parseCSV(data) {
+
+    function parseCSV(data) {
         const lines = data.split('\n');
         const headers = lines[0].split(',');
 
         return lines.slice(1)
             .map(line => {
                 if (!line.trim()) return null;
-                const values = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
-                if (values && values.length === headers.length) {
+                const values = [];
+                let inQuotes = false;
+                let value = '';
+
+                for (let i = 0; i < line.length; i++) {
+                    const char = line[i];
+
+                    if (char === '"') {
+                        inQuotes = !inQuotes; // Toggle the state of inQuotes
+                    } else if (char === ',' && !inQuotes) {
+                        values.push(value.trim());
+                        value = '';
+                    } else {
+                        value += char;
+                    }
+                }
+                values.push(value.trim());
+
+                if (values.length === headers.length) {
                     let profile = {};
                     headers.forEach((header, i) => {
-                        profile[header.trim()] = values[i] ? values[i].replace(/(^"|"$)/g, '').trim() : "N/A";
+                        profile[header.trim()] = values[i] ? values[i].trim() : "N/A";
                     });
                     return profile;
                 }
@@ -170,4 +228,3 @@ document.addEventListener('DOMContentLoaded', function() {
             .filter(profile => profile !== null);
     }
 });
-
