@@ -5,12 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load profiles from the CSV file
     fetch('data/candidates.csv')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.text();
-        })
+        .then(response => response.text())
         .then(data => {
             profiles = parseCSV(data);
             if (profiles.length > 0) {
@@ -19,24 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('No profiles found in the CSV.');
             }
         })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
+        .catch(error => console.error('Error fetching candidates:', error));
 
     // Load jobs from the CSV file
     fetch('data/jobs.csv')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.text();
-        })
+        .then(response => response.text())
         .then(data => {
             populateJobsDropdown(parseCSV(data));
         })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
+        .catch(error => console.error('Error fetching jobs:', error));
 
     document.getElementById('accept').addEventListener('click', function() {
         selectCandidate();
@@ -46,17 +32,52 @@ document.addEventListener('DOMContentLoaded', function() {
         swipeLeft();
     });
 
+    document.getElementById('home-btn').addEventListener('click', function() {
+        displayProfile(currentIndex);
+    });
+
     function displayProfile(index) {
         if (index < profiles.length) {
             const profile = profiles[index];
-            document.getElementById('name').textContent = profile.name || '';
-            document.getElementById('experience').textContent = profile.experience || '';
-            document.getElementById('company').textContent = profile.company || '';
-            document.getElementById('job').textContent = profile.job || '';
-            document.getElementById('education').textContent = profile.education || '';
-            document.getElementById('skills').textContent = profile.skills || '';
-            document.getElementById('other-skills').textContent = profile.other_skills || '';
-            document.getElementById('referrals').textContent = profile.referrals || '';
+            document.getElementById('profile-card').innerHTML = `
+                <h2 class="name">${profile.name || ''}</h2>
+                <div class="profile-details">
+                    <h3>Years of Experience</h3>
+                    <ul>
+                        <li>${profile.experience || ''}</li>
+                    </ul>
+                    <h3>Previous Company</h3>
+                    <ul>
+                        <li>${profile.company || ''}</li>
+                    </ul>
+                    <h3>Job Title</h3>
+                    <ul>
+                        <li>${profile.job || ''}</li>
+                    </ul>
+                    <h3>Education</h3>
+                    <ul>
+                        <li>${profile.education || ''}</li>
+                    </ul>
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>${profile.skills || ''}</li>
+                    </ul>
+                    <h3>Other Relevant Skills</h3>
+                    <ul>
+                        <li>${profile.other_skills || ''}</li>
+                    </ul>
+                    <h3>#Jobs Referred To</h3>
+                    <ul>
+                        <li>${profile.referrals || ''}</li>
+                    </ul>
+                </div>
+                <div class="swipe-buttons">
+                    <button id="reject" class="swipe-button reject">❌</button>
+                    <button id="accept" class="swipe-button accept">✔️</button>
+                </div>
+            `;
+            document.getElementById('accept').addEventListener('click', selectCandidate);
+            document.getElementById('reject').addEventListener('click', swipeLeft);
         }
     }
 
@@ -129,8 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
             output.textContent = this.value;
         };
     }
-
-    function parseCSV(data) {
+        function parseCSV(data) {
         const lines = data.split('\n');
         const headers = lines[0].split(',');
 
@@ -150,3 +170,4 @@ document.addEventListener('DOMContentLoaded', function() {
             .filter(profile => profile !== null);
     }
 });
+
