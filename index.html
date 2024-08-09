@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Recruitment Swipe UI</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <h2>Dashboard</h2>
+        <ul>
+            <li>Active Hiring Jobs</li>
+            <li>Past Hires</li>
+            <li>Selected Candidates</li>
+        </ul>
+    </div>
+
+    <div class="profile-viewer">
+        <div id="profile-card" class="profile-card">
+            <h3 id="experience">Years of Experience: 5</h3>
+            <p id="company">Previous Company: Example Corp</p>
+            <p id="job">Job Title: Software Developer</p>
+            <p id="education">Education: B.Sc in Computer Science</p>
+            <p id="skills">Skills: JavaScript, Python, SQL</p>
+            <p id="other-skills">Other Relevant Skills: Team Leadership</p>
+            <p id="referrals">#Jobs Referred: 3</p>
+            <div class="swipe-buttons">
+                <button id="reject" class="swipe-button reject">❌</button>
+                <button id="accept" class="swipe-button accept">✔️</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
