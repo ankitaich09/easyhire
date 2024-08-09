@@ -150,3 +150,13 @@ body {
     background-color: #3e8e41;
 }
 
+/* Add styles for the selected candidates list */
+#selected-candidates {
+    list-style-type: decimal; /* Change to 'bullet' for bullets */
+    padding-left: 20px; /* Indentation */
+}
+
+#selected-candidates li {
+    margin-bottom: 10px;
+    cursor: pointer; /* Make items look clickable */
+}
