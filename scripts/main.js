@@ -61,16 +61,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function parseCSV(data) {
-        const lines = data.split('\n');
-        const headers = lines[0].split(',');
+    const lines = data.split('\n');
+    const headers = lines[0].split(',');
 
-        return lines.slice(1).map(line => {
-            const values = line.split(',');
-            let profile = {};
-            headers.forEach((header, i) => {
-                profile[header.trim()] = values[i] ? values[i].trim() : "N/A";
-            });
-            return profile;
+    return lines.slice(1).map(line => {
+        const values = [];
+        let inQuotes = false;
+        let value = '';
+
+        for (let i = 0; i < line.length; i++) {
+            const char = line[i];
+
+            if (char === '"') {
+                inQuotes = !inQuotes; // toggle the state of inQuotes
+            } else if (char === ',' && !inQuotes) {
+                values.push(value.trim());
+                value = '';
+            } else {
+                value += char;
+            }
+        }
+        values.push(value.trim());
+
+        let profile = {};
+        headers.forEach((header, i) => {
+            profile[header.trim()] = values[i] ? values[i].trim() : "N/A";
         });
-    }
+        return profile;
+    });
+}
 });
