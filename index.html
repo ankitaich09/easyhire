@@ -10,9 +10,20 @@
     <div class="dashboard">
         <h2>Dashboard</h2>
         <ul>
-            <li>Active Hiring Jobs</li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Active Hiring Jobs</button>
+                    <div id="jobs-dropdown" class="dropdown-content">
+                        <!-- Job options populated from jobs.csv -->
+                    </div>
+                </div>
+            </li>
             <li>Past Hires</li>
-            <li>Selected Candidates</li>
+            <li>Selected Candidates
+                <ul id="selected-candidates">
+                    <!-- Selected candidates will be added here -->
+                </ul>
+            </li>
         </ul>
     </div>
 
