@@ -1,5 +1,51 @@
 name,experience,company,job,education,skills,other_skills,referrals
-John Doe,5,Example Corp,Software Developer,B.Sc in Computer Science,"JavaScript, Python, SQL",Team Leadership,3
-Jane Smith,7,Tech Inc.,Lead Developer,M.Sc in Information Technology,"Java, Angular, Node.js",Agile Methodologies,5
-Alice Johnson,3,Startup LLC,Junior Developer,B.A. in Software Engineering,"HTML, CSS, React",UI/UX Design,2
-Partha Dutta, 3, UIC, Research Assistant, MS in Mechanical Engineering, Mechanical Engineering and Making startups, Netorking, 4
+Lucas Jones,11 years,DataDrive,Frontend Developer,M.Eng in Computer Engineering,"Linux, Docker, PHP, Vue.js, CSS","AWS, Vue.js, Go",1
+Harper Smith,12 years,NextGen Solutions,Frontend Developer,B.A. in Software Engineering,"Linux, Go, HTML, Swift, Data Analysis","Flask, Swift, C++",10
+Jack Wilson,15 years,DataDrive,Software Developer,M.Sc in Information Technology,"Ruby, Azure, Vue.js, Java, JavaScript","SQL, Ruby, Project Management",6
+Amelia Garcia,1 years,NextGen Solutions,Frontend Developer,B.A. in Software Engineering,"Angular, Java, Scrum, Node.js, Go","Data Analysis, Ruby, Azure",2
+Isabella Jackson,6 years,NextGen Solutions,Project Manager,B.A. in Software Engineering,"Kubernetes, HTML, C#, C++, Scrum","React, C#, Django",3
+Ava Moore,2 years,WebWorx,Data Scientist,M.Eng in Computer Engineering,"Flask, Java, C#, Scrum, Linux","Java, C#, Project Management",3
+Emma Miller,12 years,Cyber Systems,Frontend Developer,B.Sc in Computer Science,"Data Analysis, Flask, Machine Learning, Swift, Python","SQL, Swift, Machine Learning",8
+Henry Garcia,13 years,WebWorx,Frontend Developer,B.A. in Software Engineering,"Swift, PHP, Azure, Linux, Agile","SQL, Python, Agile",4
+Emma Miller,12 years,WebWorx,Frontend Developer,M.Sc in Information Technology,"Git, Machine Learning, C++, React, Go","Ruby, Machine Learning, JavaScript",5
+Benjamin Garcia,11 years,Cyber Systems,Software Developer,M.Eng in Computer Engineering,"Machine Learning, React, Node.js, Vue.js, Kubernetes","Flask, C#, Kubernetes",10
+James Smith,3 years,NextGen Solutions,System Analyst,B.A. in Software Engineering,"Swift, Vue.js, SQL, HTML, Scrum","Agile, Ruby, Vue.js",2
+Sophia Rodriguez,15 years,NextGen Solutions,System Analyst,B.Sc in Computer Science,"Azure, Scrum, Ruby, HTML, Vue.js","Data Analysis, Ruby, Docker",3
+Henry Davis,6 years,WebWorx,Data Scientist,B.Sc in Computer Science,"Java, Angular, Project Management, Flask, Agile","Java, Node.js, Vue.js",2
+Alexander Gonzalez,2 years,WebWorx,System Analyst,B.A. in Software Engineering,"C#, Data Analysis, React, Kubernetes, Go","PHP, Vue.js, React",4
+Owen Smith,13 years,TechCorp,Frontend Developer,B.Sc in Computer Science,"Azure, Git, JavaScript, Machine Learning, React","JavaScript, Vue.js, Machine Learning",4
+Olivia Hernandez,13 years,TechCorp,Frontend Developer,M.Sc in Information Technology,"Node.js, Git, Linux, CSS, React","Node.js, SQL, Agile",1
+Ava Martin,15 years,Cyber Systems,System Analyst,M.Eng in Computer Engineering,"AWS, Ruby, Django, Java, Git","Node.js, Kubernetes, JavaScript",1
+Sophia Taylor,5 years,NextGen Solutions,Software Developer,B.A. in Software Engineering,"Python, C++, Linux, Kubernetes, Swift","HTML, Node.js, CSS",9
+Emma Jones,1 years,WebWorx,Data Scientist,M.Sc in Information Technology,"Docker, Scrum, Django, React, Vue.js","Angular, SQL, Agile",1
+Ava Brown,14 years,TechCorp,Project Manager,M.Eng in Computer Engineering,"Vue.js, Django, Ruby, Java, Machine Learning","JavaScript, Docker, Swift",1
+Lucas Wilson,4 years,NextGen Solutions,Frontend Developer,M.Eng in Computer Engineering,"CSS, Machine Learning, Kubernetes, Git, JavaScript","Project Management, Django, Scrum",3
+Evelyn Jones,9 years,Cyber Systems,Frontend Developer,B.Sc in Computer Science,"HTML, Agile, Machine Learning, C++, Java","Node.js, Scrum, Swift",1
+Benjamin Jackson,1 years,WebWorx,System Analyst,M.Sc in Information Technology,"AWS, CSS, Vue.js, Docker, C++","Go, Azure, Angular",8
+Jack Taylor,1 years,Cyber Systems,Data Scientist,B.Sc in Computer Science,"Python, Project Management, Machine Learning, C++, JavaScript","Python, SQL, Agile",2
+Elijah Lopez,7 years,WebWorx,Data Scientist,B.Sc in Computer Science,"Ruby, JavaScript, Go, AWS, Machine Learning","Git, Node.js, C#",6
+Evelyn Smith,11 years,TechCorp,Software Developer,B.Sc in Computer Science,"Ruby, Kubernetes, Node.js, CSS, Machine Learning","Project Management, SQL, Angular",1
+Jack Lopez,15 years,Cyber Systems,Project Manager,B.A. in Software Engineering,"Vue.js, Linux, Flask, Swift, SQL","Git, Django, Kubernetes",1
+Mia Williams,7 years,Innovatech,System Analyst,M.Sc in Information Technology,"Python, Azure, Linux, Swift, React","HTML, Angular, Python",8
+Mia Smith,6 years,DataDrive,Data Scientist,M.Eng in Computer Engineering,"Flask, C++, Node.js, Docker, C#","Agile, Go, Java",4
+Lucas Brown,12 years,WebWorx,Data Scientist,M.Eng in Computer Engineering,"Java, PHP, Project Management, Docker, Go","CSS, Machine Learning, Java",2
+Olivia Williams,6 years,NextGen Solutions,Data Scientist,B.A. in Software Engineering,"Git, Linux, Vue.js, Ruby, React","Python, Agile, PHP",3
+James Taylor,11 years,Innovatech,Data Scientist,B.A. in Software Engineering,"Vue.js, Angular, Machine Learning, React, Linux","C++, Linux, Swift",9
+Harper Thomas,10 years,NextGen Solutions,System Analyst,M.Eng in Computer Engineering,"Scrum, Ruby, Swift, Machine Learning, Azure","Ruby, JavaScript, Flask",1
+Ava Williams,12 years,WebWorx,Project Manager,B.A. in Software Engineering,"Python, Scrum, Vue.js, Go, Project Management","Git, C#, JavaScript",7
+Henry Smith,15 years,TechCorp,Frontend Developer,M.Eng in Computer Engineering,"Ruby, HTML, C++, Kubernetes, Git","JavaScript, Data Analysis, Django",2
+James Martinez,14 years,Cyber Systems,System Analyst,B.Sc in Computer Science,"Python, Angular, Vue.js, Agile, Scrum","Docker, AWS, Machine Learning",2
+William Gonzalez,7 years,NextGen Solutions,Data Scientist,M.Sc in Information Technology,"Node.js, CSS, SQL, HTML, C#","Git, Agile, CSS",7
+Elijah Thomas,10 years,DataDrive,Project Manager,B.Sc in Computer Science,"PHP, Go, JavaScript, Java, Django","Python, Docker, Scrum",7
+William Lopez,3 years,WebWorx,Frontend Developer,M.Eng in Computer Engineering,"Django, Project Management, Node.js, PHP, Scrum","Flask, Django, Agile",8
+Henry Rodriguez,14 years,Cyber Systems,Frontend Developer,M.Eng in Computer Engineering,"C++, HTML, Django, SQL, JavaScript","Python, Machine Learning, HTML",4
+Evelyn Johnson,11 years,NextGen Solutions,Data Scientist,B.Sc in Computer Science,"Data Analysis, JavaScript, Go, HTML, C++","Python, PHP, Swift",2
+Jack Rodriguez,9 years,Innovatech,Data Scientist,M.Sc in Information Technology,"PHP, Project Management, CSS, React, Django","Vue.js, SQL, JavaScript",2
+Sophia Jackson,4 years,DataDrive,Data Scientist,B.A. in Software Engineering,"PHP, Kubernetes, Scrum, Node.js, AWS","Angular, React, Agile",3
+Lucas Hernandez,11 years,Cyber Systems,Software Developer,M.Eng in Computer Engineering,"Machine Learning, Python, Project Management, HTML, JavaScript","PHP, Flask, Git",5
+Henry Miller,14 years,Cyber Systems,Project Manager,B.A. in Software Engineering,"Docker, Kubernetes, Machine Learning, React, Swift","Node.js, PHP, SQL",1
+Henry Brown,9 years,DataDrive,Data Scientist,M.Eng in Computer Engineering,"HTML, C++, Docker, JavaScript, React","React, Node.js, Swift",6
+Levi Davis,2 years,WebWorx,Data Scientist,B.A. in Software Engineering,"AWS, C++, Agile, Machine Learning, Git","React, Data Analysis, Node.js",9
+Levi Anderson,3 years,Innovatech,Software Developer,B.Sc in Computer Science,"HTML, Go, AWS, Swift, Python","Vue.js, React, SQL",7
+James Johnson,13 years,WebWorx,Software Developer,M.Sc in Information Technology,"Git, Django, AWS, C#, CSS","C#, CSS, Azure",1
+Levi Anderson,11 years,NextGen Solutions,Software Developer,B.Sc in Computer Science,"Docker, Azure, Machine Learning, SQL, Project Management","Azure, Java, AWS",3

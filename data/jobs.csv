@@ -1,4 +1,11 @@
 name,required_experience,required_skills,payscale,deadline
-Software Engineer,3 years,"JavaScript, Python, SQL",70000,2024-12-31
-Data Analyst,2 years,"SQL, Excel, Python",60000,2024-11-30
-Project Manager,5 years,"Agile, Leadership, Communication",90000,2024-10-31
+Software Engineer,6 years,"Swift, C#, PHP, Django",66391,2024-09-15
+Data Analyst,2 years,"Java, C#, Ruby, Git",139814,2024-11-27
+Project Manager,7 years,"Agile, Kubernetes, Flask, Git",149208,2024-02-18
+System Administrator,7 years,"AWS, Linux, Agile, Ruby",135597,2024-08-16
+Frontend Developer,2 years,"Java, Git, CSS, Ruby",64813,2024-09-21
+Backend Developer,5 years,"Ruby, Azure, Project Management, Django",73238,2024-09-24
+DevOps Engineer,4 years,"Data Analysis, Vue.js, Flask, Machine Learning",64781,2024-03-13
+Product Manager,8 years,"SQL, Swift, Kubernetes, Angular",66454,2024-04-15
+Quality Assurance,5 years,"Swift, Linux, JavaScript, Data Analysis",93149,2024-05-27
+UX/UI Designer,7 years,"Kubernetes, Scrum, Go, SQL",121456,2024-04-21
