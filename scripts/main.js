@@ -21,23 +21,30 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayProfile(index) {
         if (index < profiles.length) {
             const profile = profiles[index];
-            document.getElementById('experience').textContent = `Years of Experience: ${profile.experience}`;
-            document.getElementById('company').textContent = `Previous Company: ${profile.company}`;
-            document.getElementById('job').textContent = `Job Title: ${profile.job}`;
-            document.getElementById('education').textContent = `Education: ${profile.education}`;
-            document.getElementById('skills').textContent = `Skills: ${profile.skills}`;
-            document.getElementById('other-skills').textContent = `Other Relevant Skills: ${profile.other_skills}`;
-            document.getElementById('referrals').textContent = `#Jobs Referred: ${profile.referrals}`;
+            document.getElementById('name').textContent = profile.name;
+            document.getElementById('experience').textContent = profile.experience;
+            document.getElementById('company').textContent = profile.company;
+            document.getElementById('job').textContent = profile.job;
+            document.getElementById('education').textContent = profile.education;
+            document.getElementById('skills').textContent = profile.skills;
+            document.getElementById('other-skills').textContent = profile.other_skills;
+            document.getElementById('referrals').textContent = profile.referrals;
         }
     }
 
     function swipeRight() {
         currentIndex++;
+        if (currentIndex >= profiles.length) {
+            currentIndex = 0;
+        }
         displayProfile(currentIndex);
     }
 
     function swipeLeft() {
         currentIndex++;
+        if (currentIndex >= profiles.length) {
+            currentIndex = 0;
+        }
         displayProfile(currentIndex);
     }
 
@@ -49,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const values = line.split(',');
             let profile = {};
             headers.forEach((header, i) => {
-                profile[header.trim()] = values[i].trim();
+                profile[header.trim()] = values[i] ? values[i].trim() : "N/A";
             });
             return profile;
         });
