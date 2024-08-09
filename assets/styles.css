@@ -60,10 +60,12 @@
     position: fixed;
     bottom: 10px;
     right: 10px;
-    width: 120px; /* Adjust the size as needed */
+    width: 60px; /* Adjusted for a smaller size, similar to a passport photo */
+    height: auto; /* Maintain aspect ratio */
     z-index: 1000; /* Ensure it appears on top */
-    opacity: 0.9; /* Slight transparency, if desired */
+    opacity: 0.9; /* Slight transparency, optional */
 }
+
 
 #logo:hover {
     opacity: 1; /* Fully opaque on hover */
